@@ -1,0 +1,27 @@
+
+ID da mensagem	<07487d1456302a286cf9c4ccc.2cc0b91950.20220720120103.4afb5fcedf.09809087@mail147.atl81.rsgsv.net>
+Criado em:	20 de julho de 2022 09:01 (entregue após 2535 segundos)
+De:	TED Talks Daily <no-reply@ted.com> Usando Mailchimp Mailer - **CID4afb5fcedf2cc0b91950**
+Para:	alanpontoinfo@gmail.com
+Para:	alanpontoinfo@gmail.com
+Para:	alanpontoinfo@gmail.com
+Para:	alanpontoinfo@gmail.com
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+Assunto:	How Hope Anchors You in Difficult Times
+SPF:	PASS com o IP 198.2.129.147 Saiba mais
+DKIM:	'PASS' com o domínio ted.com Saiba mais
+DMARC:	'PASS' Saiba mais

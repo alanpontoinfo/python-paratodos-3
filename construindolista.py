@@ -1,0 +1,6 @@
+tarefas = list()
+tarefas.append('Lavar Banheiro')
+tarefas.append('9:00')
+print(tarefas)
+tarefas.append('Limpar a casa')
+print(tarefas)
